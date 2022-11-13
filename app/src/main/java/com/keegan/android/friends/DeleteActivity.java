@@ -32,9 +32,8 @@ public class DeleteActivity extends AppCompatActivity {
         {
             RadioButton rb = new RadioButton(this);
             rb.setId(friend.getId());
-            rb.setText(friend.getFirst_name());
-            rb.setText(friend.getLast_name());
-            rb.setText(friend.getEmail());
+            String toString = friend.getFirst_name() + " " + friend.getLast_name() + " " + friend.getEmail();
+            rb.setText(toString);
             group.addView(rb);
         }
 
