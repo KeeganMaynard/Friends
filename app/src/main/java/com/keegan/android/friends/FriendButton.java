@@ -12,6 +12,4 @@ public class FriendButton extends AppCompatButton {
         super(context);
         friend = newFriend;
     }
-
-
 }

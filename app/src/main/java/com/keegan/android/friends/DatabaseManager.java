@@ -87,20 +87,4 @@ public class DatabaseManager extends SQLiteOpenHelper {
         db.close();
         return friends;
     }
-
-    public Friend selectById(int id)
-    {
-        String sqlQuery = "select * from " + TABLE_FRIENDS;
-        sqlQuery += " where " + ID + " = " + id;
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(sqlQuery, null);
-
-        Friend friend = null;
-        if(cursor.moveToFirst())
-        {
-            friend = new Friend(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), cursor.getString(3));
-        }
-        return friend;
-    }
 }

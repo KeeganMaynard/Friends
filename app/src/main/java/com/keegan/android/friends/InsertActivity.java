@@ -17,7 +17,7 @@ public class InsertActivity extends AppCompatActivity {
     }
 
     public void insert( View v ) {
-        // Retrieve name and price
+        // Retrieve names and email
         EditText fnameEditText = findViewById( R.id.input_first_name );
         EditText lnameEditText = findViewById( R.id.input_last_name );
         EditText emailEditText = findViewById(R.id.input_email);
