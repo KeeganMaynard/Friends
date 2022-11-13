@@ -2,7 +2,6 @@ package com.keegan.android.friends;
 
 import android.graphics.Point;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,11 +79,13 @@ public class UpdateActivity extends AppCompatActivity {
                 // add the elements to grid
                 grid.addView( ids[i], width / 10,
                         ViewGroup.LayoutParams.WRAP_CONTENT );
-                grid.addView( namesAndEmail[i][0], ( int ) ( width * .4 ),
+                grid.addView( namesAndEmail[i][0], ( int ) ( width * .2 ),
                         ViewGroup.LayoutParams.WRAP_CONTENT );
-                grid.addView( namesAndEmail[i][1], ( int ) ( width * .15 ),
+                grid.addView( namesAndEmail[i][1], ( int ) ( width * .2 ),
                         ViewGroup.LayoutParams.WRAP_CONTENT );
-                grid.addView( buttons[i], ( int ) ( width * .35 ),
+                grid.addView(namesAndEmail[i][2], (int) (width * .2),
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+                grid.addView( buttons[i], ( int ) ( width * .2 ),
                         ViewGroup.LayoutParams.WRAP_CONTENT );
 
                 i++;
@@ -105,14 +106,13 @@ public class UpdateActivity extends AppCompatActivity {
             String lname = lnameET.getText( ).toString( );
             String email = emailET.getText().toString();
 
-            // update candy in database
+            // update friend in database
             try {
-
                 dbManager.updateById( friendId, fname, lname, email);
                 Toast.makeText( UpdateActivity.this, "Friend updated", Toast.LENGTH_SHORT ).show( );
 
                 // update screen
-                updateView( );
+                updateView();
             } catch( NumberFormatException nfe ) {
                 Toast.makeText( UpdateActivity.this, "Friend error", Toast.LENGTH_LONG ).show( );
             }

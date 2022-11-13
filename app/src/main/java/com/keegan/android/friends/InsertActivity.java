@@ -25,7 +25,7 @@ public class InsertActivity extends AppCompatActivity {
         String last = lnameEditText.getText( ).toString( );
         String email = emailEditText.getText().toString();
 
-        // insert new candy in database
+        // insert new friend in database
         try {
             Friend friend = new Friend(0, first, last, email);
             dbManager.insert(friend);

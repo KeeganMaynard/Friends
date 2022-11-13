@@ -16,11 +16,10 @@ import java.util.ArrayList;
 public class DeleteActivity extends AppCompatActivity {
     private DatabaseManager dbManager;
 
-    public void OnCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        dbManager = new DatabaseManager(this);
-        updateView();
+    public void onCreate( Bundle savedInstanceState ) {
+        super.onCreate( savedInstanceState );
+        dbManager = new DatabaseManager( this );
+        updateView( );
     }
 
     public void updateView()
@@ -46,15 +45,15 @@ public class DeleteActivity extends AppCompatActivity {
         backButton.setText(R.string.button_back);
 
         backButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){DeleteActivity.this.finish();}
+            public void onClick(View v)
+            {DeleteActivity.this.finish();}
         });
 
         scrollView.addView(group);
         layout.addView( scrollView );
 
         // add back button at bottom
-        RelativeLayout.LayoutParams params
-                = new RelativeLayout.LayoutParams(
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT );
         params.addRule( RelativeLayout.ALIGN_PARENT_BOTTOM );
